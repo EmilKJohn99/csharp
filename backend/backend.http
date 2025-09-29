@@ -1,0 +1,60 @@
+
+# -----------------------------
+# HABITS
+# -----------------------------
+
+### Create a new habit
+POST http://localhost:5253/habits
+Content-Type: application/json
+
+{
+  "name": "Brush Teeth",
+  "description": "Brush teeth after breakfast",
+  "frequency": "Daily",
+  "startDate": "2025-09-29T00:00:00",
+  "isActive": true
+}
+
+### Get all habits
+GET http://localhost:5253/habits
+
+### Get habit by id
+GET http://localhost:5253/habits/1
+
+### Update habit
+PUT http://localhost:5253/habits/1
+Content-Type: application/json
+
+{
+  "name": "Exercise Updated",
+  "description": "Updated description",
+  "frequency": "Daily",
+  "startDate": "2025-09-29T00:00:00",
+  "isActive": true
+}
+
+### Delete habit
+DELETE http://localhost:5253/habits/1
+
+# -----------------------------
+# HABIT LOGS
+# -----------------------------
+
+### Add a habit log (mark habit completed)
+POST http://localhost:5253/habitlogs
+Content-Type: application/json
+
+{
+  "habitId": 1,
+  "date": "2025-09-29T00:00:00",
+  "isCompleted": true
+}
+
+### Get logs for a habit
+GET http://localhost:5253/habitlogs/1
+
+### Get all habit logs
+GET http://localhost:5253/habitlogs
+
+### Delete a habit log
+DELETE http://localhost:5253/habitlogs/2
